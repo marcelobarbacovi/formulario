@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(216, 231, 231);
+        text-align: center;
+    }
+    
+    label {
+        font-size: 20px;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <h1>Formulário javascript</h1>
+
+    <div class="container">
+        <form name="formuser" action="enviar.php" method="POST">
+            <label for="nome"> Nome:</label>
+            <input type="text" name="nome" id="nome"><br><br>
+
+            <label for="sobrenome"> sobren:</label>
+            <input type="text" name="sobrenome" id="sobrenome"><br><br>
+
+
+            <label for="data"> Dt Nasc.:</label>
+            <input type="date" name="data" id="data"><br><br>
+
+
+
+            <label for="">E-mail:</label>
+            <input type="email" name="email" id="email"><br><br>
+
+
+
+            <label for=""> Senha:</label>
+            <input type="password" name="senha" id="senha"><br><br>
+
+            <input type="submit" onclick="return validar()">
+        </form>
+    </div>
+    <div class="name">
+
+        <p>
+            aluno: Marcelo Barbacovi Análise e Desenvolvimento de Sistemas <br> UNIVALI </p>
+
+
+    </div>
+
+
+
+    <script>
+        function validar() {
+            var nome = document.getElementById("nome").value;
+            var sobrenome = document.getElementById("sobrenome").value;
+            var data = document.getElementById("data").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            if (nome == "") {
+                alert('Preencha o campo nome.');
+
+                return false;
+            }
+            if (sobrenome == "") {
+                alert('Preencha o campo Sobrenome.');
+
+                return false;
+            }
+            if (data == "") {
+                alert('Preencha o campo Data de Nascimento.');
+                formuser.data.focus();
+                return false;
+            }
+
+            if (email == "" || email.indexOf('@') == -1) {
+                alert('Não é um e-mail valido');
+                return false;
+            }
+
+            if (senha == "" || senha.length <= 7) {
+                alert('Preencha o campo senha com minimo 8 caracteres');
+                return false;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
